@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1611113059471,
+  "lastUpdate": 1611113205582,
   "repoUrl": "https://github.com/jimeh/rands",
   "entries": {
     "Benchmark": [
@@ -168,6 +168,90 @@ window.BENCHMARK_DATA = {
             "value": 29328,
             "unit": "ns/op",
             "extra": "41301 times"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "contact@jimeh.me",
+            "name": "Jim Myhrberg",
+            "username": "jimeh"
+          },
+          "committer": {
+            "email": "contact@jimeh.me",
+            "name": "Jim Myhrberg",
+            "username": "jimeh"
+          },
+          "distinct": true,
+          "id": "48449585e85ce4add1475f9f130235af809d6a96",
+          "message": "chore(release): 0.1.0",
+          "timestamp": "2021-01-20T03:20:37Z",
+          "tree_id": "f393971743d911420d39ce8f029898bdd019d2ea",
+          "url": "https://github.com/jimeh/rands/commit/48449585e85ce4add1475f9f130235af809d6a96"
+        },
+        "date": 1611113205042,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkString__greek",
+            "value": 9.29,
+            "unit": "ns/op",
+            "extra": "129158050 times"
+          },
+          {
+            "name": "BenchmarkString__chinese",
+            "value": 10.6,
+            "unit": "ns/op",
+            "extra": "100000000 times"
+          },
+          {
+            "name": "BenchmarkString__japanese",
+            "value": 10.6,
+            "unit": "ns/op",
+            "extra": "100000000 times"
+          },
+          {
+            "name": "BenchmarkString__uppercase",
+            "value": 25576,
+            "unit": "ns/op",
+            "extra": "46983 times"
+          },
+          {
+            "name": "BenchmarkString__lowercase",
+            "value": 25523,
+            "unit": "ns/op",
+            "extra": "46984 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__greek",
+            "value": 36605,
+            "unit": "ns/op",
+            "extra": "32779 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__chinese",
+            "value": 56169,
+            "unit": "ns/op",
+            "extra": "21303 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__japanese",
+            "value": 54872,
+            "unit": "ns/op",
+            "extra": "21912 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__uppercase",
+            "value": 25816,
+            "unit": "ns/op",
+            "extra": "46659 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__lowercase",
+            "value": 25940,
+            "unit": "ns/op",
+            "extra": "46303 times"
           }
         ]
       }

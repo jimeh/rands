@@ -4,9 +4,9 @@
 
 <p align="center">
   <strong>
-    Go package providing a suite of functions that use `crypto/rand` to generate
-    cryptographically secure random strings in various formats, as well as ints
-    and bytes.
+    Go package providing a suite of functions that use <code>crypto/rand</code>
+    to generate cryptographically secure random strings in various formats, as
+    well as ints and bytes.
   </strong>
 </p>
 

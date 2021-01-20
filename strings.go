@@ -164,11 +164,11 @@ func UnicodeString(n int, alphabet []rune) (string, error) {
 }
 
 // DNSLabel returns a random string of n length in a DNS label compliant format
-// as defined in RFC 1035, section 2.3.1, Preferred name syntax:
-// https://tools.ietf.org/html/rfc1035#section-2.3.1
+// as defined in RFC 1035, section 2.3.1:
+// https://www.rfc-editor.org/rfc/rfc1035.html#section-2.3.1
 //
-// It also adheres to RFC 5891, section 4.2.3.1, Hyphen Restrictions:
-// https://tools.ietf.org/html/rfc5891#section-4.2.3.1
+// It also adheres to RFC 5891, section 4.2.3.1:
+// https://www.rfc-editor.org/rfc/rfc5891.html#section-4.2.3.1
 //
 // In summary, the generated random string will:
 //
@@ -177,7 +177,7 @@ func UnicodeString(n int, alphabet []rune) (string, error) {
 //  - last character will be one of a-z or 0-9
 //  - in-between first and last characters consist of a-z, 0-9, or "-"
 //  - potentially contain two or more consecutive "-", except the 3rd and 4th
-//    characters, as that would violate RFC 5891.
+//    characters, as that would violate RFC 5891, section 4.2.3.1.
 func DNSLabel(n int) (string, error) {
 	switch {
 	case n < 1 || n > 63:

@@ -52,7 +52,7 @@ jobs:
       - name: Fix benchmark names
         run: >-
           perl -pe 's/^(Benchmark.+?)\/(\S+)(-\d+)(\s+)/\1__\2\4/' output.raw |
-          tr '-' '_' | tee output.txt
+          tr '=-' '_' | tee output.txt
       - name: Announce benchmark result
         uses: rhysd/github-action-benchmark@v1
         with:
@@ -128,7 +128,7 @@ jobs:
       - name: Fix benchmark names
         run: >-
           perl -pe 's/^(Benchmark.+?)\/(\S+)(-\d+)(\s+)/\1__\2\4/' output.raw |
-          tr '-' '_' | tee output.txt
+          tr '=-' '_' | tee output.txt
       - name: Store benchmark result
         uses: rhysd/github-action-benchmark@v1
         with:

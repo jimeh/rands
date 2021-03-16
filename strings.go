@@ -164,11 +164,9 @@ func UnicodeString(n int, alphabet []rune) (string, error) {
 }
 
 // DNSLabel returns a random string of n length in a DNS label compliant format
-// as defined in RFC 1035, section 2.3.1:
-// https://www.rfc-editor.org/rfc/rfc1035.html#section-2.3.1
+// as defined in RFC 1035, section 2.3.1.
 //
-// It also adheres to RFC 5891, section 4.2.3.1:
-// https://www.rfc-editor.org/rfc/rfc5891.html#section-4.2.3.1
+// It also adheres to RFC 5891, section 4.2.3.1.
 //
 // In summary, the generated random string will:
 //

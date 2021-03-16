@@ -2,6 +2,7 @@ package rands
 
 import (
 	"encoding/base64"
+	"encoding/hex"
 	"errors"
 	"regexp"
 	"strings"
@@ -576,6 +577,34 @@ func BenchmarkDNSLabel(b *testing.B) {
 				_, _ = DNSLabel(tt.n)
 			}
 		})
+	}
+}
+
+func TestUUID(t *testing.T) {
+	m := regexp.MustCompile(
+		`^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$`,
+	)
+
+	for i := 0; i < 10000; i++ {
+		got, err := UUID()
+		require.NoError(t, err)
+		require.Regexp(t, m, got)
+
+		raw := strings.ReplaceAll(got, "-", "")
+		b := make([]byte, 16)
+		_, err = hex.Decode(b, []byte(raw))
+		require.NoError(t, err)
+
+		require.Equal(t, 4, int(b[6]>>4), "version is not 4")
+		require.Equal(t, byte(0x80), b[8]&0xc0,
+			"variant is not RFC 4122",
+		)
+	}
+}
+
+func BenchmarkUUID(b *testing.B) {
+	for n := 0; n < b.N; n++ {
+		_, _ = UUID()
 	}
 }
 

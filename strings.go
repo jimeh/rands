@@ -18,6 +18,7 @@ const (
 	alphabeticChars   = upperChars + lowerChars
 	alphanumericChars = alphabeticChars + numericChars
 	dnsLabelChars     = lowerNumericChars + "-"
+	uuidHyphen        = byte('-')
 )
 
 var (
@@ -231,6 +232,32 @@ func DNSLabel(n int) (string, error) {
 
 		return head + string(body) + tail, nil
 	}
+}
+
+// UUID returns a random UUID v4 in string format as defined by RFC 4122,
+// section 4.4.
+func UUID() (string, error) {
+	b, err := Bytes(16)
+	if err != nil {
+		return "", err
+	}
+
+	b[6] = (b[6] & 0x0f) | 0x40 // Version: 4 (random)
+	b[8] = (b[8] & 0x3f) | 0x80 // Variant: RFC 4122
+
+	// Construct a UUID v4 string according to RFC 4122 specifications.
+	dst := make([]byte, 36)
+	hex.Encode(dst[0:8], b[0:4]) // time-low
+	dst[8] = uuidHyphen
+	hex.Encode(dst[9:13], b[4:6]) // time-mid
+	dst[13] = uuidHyphen
+	hex.Encode(dst[14:18], b[6:8]) // time-high-and-version
+	dst[18] = uuidHyphen
+	hex.Encode(dst[19:23], b[8:10]) // clock-seq-and-reserved, clock-seq-low
+	dst[23] = uuidHyphen
+	hex.Encode(dst[24:], b[10:]) // node
+
+	return string(dst), nil
 }
 
 func isASCII(s string) bool {

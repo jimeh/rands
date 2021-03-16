@@ -70,3 +70,8 @@ func ExampleDNSLabel() {
 	s, _ := rands.DNSLabel(16)
 	fmt.Println(s) // => z0ij9o8qkbs0ru-h
 }
+
+func ExampleUUID() {
+	s, _ := rands.UUID()
+	fmt.Println(s) // => a62b8712-f238-43ba-a47e-333f5fffe785
+}

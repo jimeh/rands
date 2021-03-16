@@ -497,54 +497,55 @@ func BenchmarkUnicodeString(b *testing.B) {
 	}
 }
 
+var dnsLabelTestCases = []struct {
+	name   string
+	n      int
+	errIs  error
+	errStr string
+}{
+	{
+		name:  "n=-128",
+		n:     -128,
+		errIs: errDNSLabelLength,
+		errStr: "rands: DNS labels must be between 1 and 63 characters " +
+			"in length",
+	},
+	{
+		name:  "n=0",
+		n:     0,
+		errIs: errDNSLabelLength,
+		errStr: "rands: DNS labels must be between 1 and 63 characters " +
+			"in length",
+	},
+	{name: "n=1", n: 1},
+	{name: "n=2", n: 2},
+	{name: "n=3", n: 3},
+	{name: "n=4", n: 4},
+	{name: "n=5", n: 5},
+	{name: "n=6", n: 6},
+	{name: "n=7", n: 7},
+	{name: "n=8", n: 8},
+	{name: "n=16", n: 16},
+	{name: "n=32", n: 32},
+	{name: "n=63", n: 63},
+	{
+		name:  "n=64",
+		n:     64,
+		errIs: errDNSLabelLength,
+		errStr: "rands: DNS labels must be between 1 and 63 characters " +
+			"in length",
+	},
+	{
+		name:  "n=128",
+		n:     128,
+		errIs: errDNSLabelLength,
+		errStr: "rands: DNS labels must be between 1 and 63 characters " +
+			"in length",
+	},
+}
+
 func TestDNSLabel(t *testing.T) {
-	tests := []struct {
-		name   string
-		n      int
-		errIs  error
-		errStr string
-	}{
-		{
-			name:  "n=-128",
-			n:     -128,
-			errIs: errDNSLabelLength,
-			errStr: "rands: DNS labels must be between 1 and 63 characters " +
-				"in length",
-		},
-		{
-			name:  "n=0",
-			n:     0,
-			errIs: errDNSLabelLength,
-			errStr: "rands: DNS labels must be between 1 and 63 characters " +
-				"in length",
-		},
-		{name: "n=1", n: 1},
-		{name: "n=2", n: 2},
-		{name: "n=3", n: 3},
-		{name: "n=4", n: 4},
-		{name: "n=5", n: 5},
-		{name: "n=6", n: 6},
-		{name: "n=7", n: 7},
-		{name: "n=8", n: 8},
-		{name: "n=16", n: 16},
-		{name: "n=32", n: 32},
-		{name: "n=63", n: 63},
-		{
-			name:  "n=64",
-			n:     64,
-			errIs: errDNSLabelLength,
-			errStr: "rands: DNS labels must be between 1 and 63 characters " +
-				"in length",
-		},
-		{
-			name:  "n=128",
-			n:     128,
-			errIs: errDNSLabelLength,
-			errStr: "rands: DNS labels must be between 1 and 63 characters " +
-				"in length",
-		},
-	}
-	for _, tt := range tests {
+	for _, tt := range dnsLabelTestCases {
 		t.Run(tt.name, func(t *testing.T) {
 			// generate lots of labels to increase the chances of catching any
 			// obscure bugs
@@ -563,6 +564,16 @@ func TestDNSLabel(t *testing.T) {
 				if tt.errStr != "" {
 					require.EqualError(t, err, tt.errStr)
 				}
+			}
+		})
+	}
+}
+
+func BenchmarkDNSLabel(b *testing.B) {
+	for _, tt := range dnsLabelTestCases {
+		b.Run(tt.name, func(b *testing.B) {
+			for n := 0; n < b.N; n++ {
+				_, _ = DNSLabel(tt.n)
 			}
 		})
 	}

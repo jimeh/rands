@@ -52,6 +52,7 @@ s, _ := rands.String(16, "abcdefABCDEF")                                // => ad
 s, _ := rands.UnicodeString(16, []rune("九七二人入八力十下三千上口土夕大")) // => 下下口九力下土夕下土八上二夕大三
 
 s, _ := rands.DNSLabel(16) // => z0ij9o8qkbs0ru-h
+s, _ := rands.UUID()       // => a62b8712-f238-43ba-a47e-333f5fffe785
 
 n, _ := rands.Int(2147483647)                   // => 1334400235
 n, _ := rands.Int64(int64(9223372036854775807)) // => 8256935979116161233

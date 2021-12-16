@@ -91,6 +91,8 @@ var testIntCases = []struct {
 }
 
 func TestInt(t *testing.T) {
+	t.Parallel()
+
 	for _, tt := range testIntCases {
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := Int(tt.max)
@@ -122,6 +124,8 @@ func BenchmarkInt(b *testing.B) {
 }
 
 func TestInt64(t *testing.T) {
+	t.Parallel()
+
 	for _, tt := range testIntCases {
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := Int64(int64(tt.max))

@@ -12,6 +12,8 @@ import (
 )
 
 func TestHex(t *testing.T) {
+	t.Parallel()
+
 	allowed := "0123456789abcdef"
 
 	for _, tt := range testCases {
@@ -35,6 +37,8 @@ func BenchmarkHex(b *testing.B) {
 }
 
 func TestBase64(t *testing.T) {
+	t.Parallel()
+
 	allowed := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" +
 		"0123456789+/="
 
@@ -62,6 +66,8 @@ func BenchmarkBase64(b *testing.B) {
 }
 
 func TestBase64URL(t *testing.T) {
+	t.Parallel()
+
 	allowed := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz" +
 		"0123456789-_"
 
@@ -89,6 +95,8 @@ func BenchmarkBase64URL(b *testing.B) {
 }
 
 func TestAlphanumeric(t *testing.T) {
+	t.Parallel()
+
 	allowed := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
 	for _, tt := range testCases {
@@ -112,6 +120,8 @@ func BenchmarkAlphanumeric(b *testing.B) {
 }
 
 func TestAlphabetic(t *testing.T) {
+	t.Parallel()
+
 	allowed := "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 	for _, tt := range testCases {
@@ -135,6 +145,8 @@ func BenchmarkAlphabetic(b *testing.B) {
 }
 
 func TestNumeric(t *testing.T) {
+	t.Parallel()
+
 	allowed := "0123456789"
 
 	for _, tt := range testCases {
@@ -158,6 +170,8 @@ func BenchmarkNumeric(b *testing.B) {
 }
 
 func TestUpper(t *testing.T) {
+	t.Parallel()
+
 	allowed := "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
 	for _, tt := range testCases {
@@ -181,6 +195,8 @@ func BenchmarkUpper(b *testing.B) {
 }
 
 func TestUpperNumeric(t *testing.T) {
+	t.Parallel()
+
 	allowed := "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 	for _, tt := range testCases {
@@ -204,6 +220,8 @@ func BenchmarkUpperNumeric(b *testing.B) {
 }
 
 func TestLower(t *testing.T) {
+	t.Parallel()
+
 	allowed := "abcdefghijklmnopqrstuvwxyz"
 
 	for _, tt := range testCases {
@@ -227,6 +245,8 @@ func BenchmarkLower(b *testing.B) {
 }
 
 func TestLowerNumeric(t *testing.T) {
+	t.Parallel()
+
 	allowed := "abcdefghijklmnopqrstuvwxyz0123456789"
 
 	for _, tt := range testCases {
@@ -348,6 +368,8 @@ var stringTestCases = []struct {
 }
 
 func TestString(t *testing.T) {
+	t.Parallel()
+
 	for _, tt := range stringTestCases {
 		t.Run(tt.name, func(t *testing.T) {
 			got, err := String(tt.n, tt.alphabet)
@@ -475,6 +497,8 @@ var unicodeStringTestCases = []struct {
 }
 
 func TestUnicodeString(t *testing.T) {
+	t.Parallel()
+
 	for _, tt := range unicodeStringTestCases {
 		t.Run(tt.name, func(t *testing.T) {
 			got, _ := UnicodeString(tt.n, []rune(tt.alphabet))
@@ -545,6 +569,8 @@ var dnsLabelTestCases = []struct {
 }
 
 func TestDNSLabel(t *testing.T) {
+	t.Parallel()
+
 	for _, tt := range dnsLabelTestCases {
 		t.Run(tt.name, func(t *testing.T) {
 			// generate lots of labels to increase the chances of catching any
@@ -580,6 +606,8 @@ func BenchmarkDNSLabel(b *testing.B) {
 }
 
 func TestUUID(t *testing.T) {
+	t.Parallel()
+
 	m := regexp.MustCompile(
 		`^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$`,
 	)

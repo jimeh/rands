@@ -7,6 +7,8 @@ import (
 )
 
 func TestBytes(t *testing.T) {
+	t.Parallel()
+
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
 			got, _ := Bytes(tt.n)

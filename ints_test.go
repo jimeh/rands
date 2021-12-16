@@ -1,7 +1,6 @@
 package rands
 
 import (
-	"errors"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -16,67 +15,67 @@ var testIntCases = []struct {
 	{
 		name:   "n=-2394345",
 		max:    -2394345,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=-409600",
 		max:    -409600,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=-1024",
 		max:    -1024,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=-128",
 		max:    -128,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=-32",
 		max:    -32,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=-16",
 		max:    -16,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=-8",
 		max:    -8,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=-7",
 		max:    -7,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=-2",
 		max:    -2,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=-1",
 		max:    -1,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{
 		name:   "n=0",
 		max:    0,
-		errIs:  errInvalidMaxInt,
+		errIs:  ErrInvalidMaxInt,
 		errStr: "rands: max cannot be less than 1",
 	},
 	{name: "n=1", max: 1},
@@ -102,7 +101,7 @@ func TestInt(t *testing.T) {
 			}
 
 			if tt.errIs != nil {
-				assert.True(t, errors.Is(err, errInvalidMaxInt))
+				assert.ErrorIs(t, err, tt.errIs)
 			}
 
 			if tt.errStr != "" {
@@ -133,7 +132,7 @@ func TestInt64(t *testing.T) {
 			}
 
 			if tt.errIs != nil {
-				assert.True(t, errors.Is(err, errInvalidMaxInt))
+				assert.ErrorIs(t, err, tt.errIs)
 			}
 
 			if tt.errStr != "" {

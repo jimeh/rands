@@ -8,4 +8,4 @@ package rands
 
 import "errors"
 
-var errBase = errors.New("rands")
+var Err = errors.New("rands")

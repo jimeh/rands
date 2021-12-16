@@ -3,7 +3,6 @@ package rands
 import (
 	"encoding/base64"
 	"encoding/hex"
-	"errors"
 	"regexp"
 	"strings"
 	"testing"
@@ -262,7 +261,7 @@ var stringTestCases = []struct {
 		n:    32,
 		alphabet: "αβγδεζηθικλμνξοπρστυφχψωςΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΩ" +
 			"άίόύώέϊϋΐΰΆΈΌΏΎΊ",
-		errIs:  errNonASCIIAlphabet,
+		errIs:  ErrNonASCIIAlphabet,
 		errStr: "rands: alphabet contains non-ASCII characters",
 	},
 	{
@@ -270,7 +269,7 @@ var stringTestCases = []struct {
 		n:    32,
 		alphabet: "的一是不了人我在有他这为之大来以个中上们到说国和地也子" +
 			"时道出而要于就下得可你年生",
-		errIs:  errNonASCIIAlphabet,
+		errIs:  ErrNonASCIIAlphabet,
 		errStr: "rands: alphabet contains non-ASCII characters",
 	},
 	{
@@ -278,7 +277,7 @@ var stringTestCases = []struct {
 		n:    32,
 		alphabet: "一九七二人入八力十下三千上口土夕大女子小山川五天中六円" +
 			"手文日月木水火犬王正出本右四",
-		errIs:  errNonASCIIAlphabet,
+		errIs:  ErrNonASCIIAlphabet,
 		errStr: "rands: alphabet contains non-ASCII characters",
 	},
 	{
@@ -359,7 +358,7 @@ func TestString(t *testing.T) {
 			}
 
 			if tt.errIs != nil {
-				assert.True(t, errors.Is(err, errNonASCIIAlphabet))
+				assert.ErrorIs(t, err, tt.errIs)
 			}
 
 			if tt.errStr != "" {
@@ -507,14 +506,14 @@ var dnsLabelTestCases = []struct {
 	{
 		name:  "n=-128",
 		n:     -128,
-		errIs: errDNSLabelLength,
+		errIs: ErrDNSLabelLength,
 		errStr: "rands: DNS labels must be between 1 and 63 characters " +
 			"in length",
 	},
 	{
 		name:  "n=0",
 		n:     0,
-		errIs: errDNSLabelLength,
+		errIs: ErrDNSLabelLength,
 		errStr: "rands: DNS labels must be between 1 and 63 characters " +
 			"in length",
 	},
@@ -532,14 +531,14 @@ var dnsLabelTestCases = []struct {
 	{
 		name:  "n=64",
 		n:     64,
-		errIs: errDNSLabelLength,
+		errIs: ErrDNSLabelLength,
 		errStr: "rands: DNS labels must be between 1 and 63 characters " +
 			"in length",
 	},
 	{
 		name:  "n=128",
 		n:     128,
-		errIs: errDNSLabelLength,
+		errIs: ErrDNSLabelLength,
 		errStr: "rands: DNS labels must be between 1 and 63 characters " +
 			"in length",
 	},
@@ -559,7 +558,7 @@ func TestDNSLabel(t *testing.T) {
 				}
 
 				if tt.errIs != nil {
-					require.True(t, errors.Is(err, errDNSLabelLength))
+					require.ErrorIs(t, err, tt.errIs)
 				}
 
 				if tt.errStr != "" {

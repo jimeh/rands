@@ -6,12 +6,12 @@ import (
 	"math/big"
 )
 
-var errInvalidMaxInt = fmt.Errorf("%w: max cannot be less than 1", errBase)
+var ErrInvalidMaxInt = fmt.Errorf("%w: max cannot be less than 1", Err)
 
 // Int generates a random int ranging between 0 and max.
 func Int(max int) (int, error) {
 	if max < 1 {
-		return 0, errInvalidMaxInt
+		return 0, ErrInvalidMaxInt
 	}
 
 	r, err := rand.Int(rand.Reader, big.NewInt(int64(max)))
@@ -25,7 +25,7 @@ func Int(max int) (int, error) {
 // Int64 generates a random int64 ranging between 0 and max.
 func Int64(max int64) (int64, error) {
 	if max < 1 {
-		return 0, errInvalidMaxInt
+		return 0, ErrInvalidMaxInt
 	}
 
 	r, err := rand.Int(rand.Reader, big.NewInt(max))

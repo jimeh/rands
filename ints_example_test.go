@@ -2,16 +2,25 @@ package rands_test
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/jimeh/rands"
 )
 
 func ExampleInt() {
-	n, _ := rands.Int(2147483647)
-	fmt.Printf("%d\n", n) // => 1334400235
+	n, err := rands.Int(2147483647)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("%d\n", n) // => 1908357440
 }
 
 func ExampleInt64() {
-	n, _ := rands.Int64(int64(9223372036854775807))
-	fmt.Printf("%d\n", n) // => 8256935979116161233
+	n, err := rands.Int64(int64(9223372036854775807))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf("%d\n", n) // => 6530460062499341591
 }

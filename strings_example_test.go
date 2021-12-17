@@ -2,76 +2,133 @@ package rands_test
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/jimeh/rands"
 )
 
 func ExampleBase64() {
-	s, _ := rands.Base64(16)
-	fmt.Println(s) // => CYxqEdUB1Rzno3SyZu2g/g==
+	s, err := rands.Base64(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => nYQLhIYTqh8oH/W4hZuXMQ==
 }
 
 func ExampleBase64URL() {
-	s, _ := rands.Base64URL(16)
-	fmt.Println(s) // => zlqw9aFqcFggbk2asn3_aQ
+	s, err := rands.Base64URL(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => zI_zrc1l0uPT4MxncR6e5w
 }
 
 func ExampleHex() {
-	s, _ := rands.Hex(16)
-	fmt.Println(s) // => 956e2ec9e7f19ddd58bb935826926531
+	s, err := rands.Hex(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => b59e8977a13f3c030bd2ea1002ec8081
 }
 
 func ExampleAlphanumeric() {
-	s, _ := rands.Alphanumeric(16)
-	fmt.Println(s) // => Fvk1PkrmG5crgOjT
+	s, err := rands.Alphanumeric(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => EgPieCBO7MuWhHtj
 }
 
 func ExampleAlphabetic() {
-	s, _ := rands.Alphabetic(16)
-	fmt.Println(s) // => XEJIzcZufHkuUmRM
+	s, err := rands.Alphabetic(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => VzcovEqvMRBWUtQC
 }
 
 func ExampleUpper() {
-	s, _ := rands.Upper(16)
-	fmt.Println(s) // => UMAGAFPPNDRGLUPZ
+	s, err := rands.Upper(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => MCZEGPWGYKNUEDCK
 }
 
 func ExampleUpperNumeric() {
-	s, _ := rands.UpperNumeric(16)
-	fmt.Println(s) // => DF0CQS0TK9CPUO3E
+	s, err := rands.UpperNumeric(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => 6LLPBBUW77B26X2X
 }
 
 func ExampleLower() {
-	s, _ := rands.Lower(16)
-	fmt.Println(s) // => ocsmggykzrxzfwgt
+	s, err := rands.Lower(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => dhoqhrqljadsztaa
 }
 
 func ExampleLowerNumeric() {
-	s, _ := rands.LowerNumeric(16)
-	fmt.Println(s) // => rwlv7a1p7klqffs5
+	s, err := rands.LowerNumeric(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => th1z1b1d24l5h8pu
 }
 
 func ExampleNumeric() {
-	s, _ := rands.Numeric(16)
-	fmt.Println(s) // => 9403373143598295
+	s, err := rands.Numeric(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => 3378802228987741
 }
 
 func ExampleString() {
-	s, _ := rands.String(16, "abcdefABCDEF")
-	fmt.Println(s) // => adCDCaDEdeffeDeb
+	s, err := rands.String(16, "abcdefABCDEF")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => BAFffADaadeeacfa
 }
 
 func ExampleUnicodeString() {
-	s, _ := rands.UnicodeString(16, []rune("九七二人入八力十下三千上口土夕大"))
-	fmt.Println(s) // => 下下口九力下土夕下土八上二夕大三
+	s, err := rands.UnicodeString(16, []rune("九七二人入八力十下三千上口土夕大"))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => 八三口上土土七入力夕人力下三上力
 }
 
 func ExampleDNSLabel() {
-	s, _ := rands.DNSLabel(16)
-	fmt.Println(s) // => z0ij9o8qkbs0ru-h
+	s, err := rands.DNSLabel(16)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => ab-sbh5q0gfb6sqo
 }
 
 func ExampleUUID() {
-	s, _ := rands.UUID()
-	fmt.Println(s) // => a62b8712-f238-43ba-a47e-333f5fffe785
+	s, err := rands.UUID()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => 6a1c4f65-d5d6-4a28-aa51-eaa94fa7ad4a
 }

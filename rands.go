@@ -4,6 +4,10 @@
 //
 // All functions which produce strings from a alphabet of characters uses
 // rand.Int() to ensure a uniform distribution of all possible values.
+//
+// rands is intended for use in production code where random data generation is
+// required. All functions have a error return value, which should be
+// checked.
 package rands
 
 import "errors"

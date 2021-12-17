@@ -8,6 +8,9 @@
 // rands is intended for use in production code where random data generation is
 // required. All functions have a error return value, which should be
 // checked.
+//
+// For tests there is the randsmust package, which has all the same functions
+// but with single return values, and they panic in the event of an error.
 package rands
 
 import "errors"

@@ -35,7 +35,6 @@ SHELL := env \
 #
 
 TOOLS += $(TOOLDIR)/gobin
-gobin: $(TOOLDIR)/gobin
 $(TOOLDIR)/gobin:
 	GO111MODULE=off go get -u github.com/myitcv/gobin
 
@@ -43,16 +42,14 @@ $(TOOLDIR)/gobin:
 define tool # 1: binary-name, 2: go-import-path
 TOOLS += $(TOOLDIR)/$(1)
 
-.PHONY: $(1)
-$(1): $(TOOLDIR)/$(1)
-
 $(TOOLDIR)/$(1): $(TOOLDIR)/gobin Makefile
 	gobin $(V) "$(2)"
 endef
 
 $(eval $(call tool,godoc,golang.org/x/tools/cmd/godoc))
-$(eval $(call tool,gofumports,mvdan.cc/gofumpt/gofumports))
-$(eval $(call tool,golangci-lint,github.com/golangci/golangci-lint/cmd/golangci-lint@v1.35))
+$(eval $(call tool,gofumpt,mvdan.cc/gofumpt))
+$(eval $(call tool,goimports,golang.org/x/tools/cmd/goimports))
+$(eval $(call tool,golangci-lint,github.com/golangci/golangci-lint/cmd/golangci-lint@v1.43))
 $(eval $(call tool,gomod,github.com/Helcaraxan/gomod))
 
 .PHONY: tools
@@ -62,8 +59,8 @@ tools: $(TOOLS)
 # Development
 #
 
-TEST ?= $$(go list ./... | grep -v 'vendor')
 BENCH ?= .
+TESTARGS ?=
 
 .PHONY: clean
 clean:
@@ -72,24 +69,24 @@ clean:
 
 .PHONY: test
 test:
-	go test $(V) -count=1 $(TESTARGS) $(TEST)
+	go test $(V) -count=1 -race $(TESTARGS) ./...
 
 .PHONY: test-deps
 test-deps:
 	go test all
 
 .PHONY: lint
-lint: golangci-lint
-	GOGC=off golangci-lint $(V) run
+lint: $(TOOLDIR)/golangci-lint
+	golangci-lint $(V) run
 
 .PHONY: format
-format: gofumports
-	gofumports -w .
+format: $(TOOLDIR)/goimports $(TOOLDIR)/gofumpt
+	goimports -w . && gofumpt -w .
 
 .SILENT: bench
 .PHONY: bench
 bench:
-	go test $(V) -count=1 -bench=$(BENCH) $(TESTARGS) $(TEST)
+	go test $(V) -count=1 -bench=$(BENCH) $(TESTARGS) ./...
 
 #
 # Coverage
@@ -115,16 +112,14 @@ coverage.out: $(SOURCES)
 
 .PHONY: deps
 deps:
-	$(info Downloading dependencies)
 	go mod download
 
 .PHONY: deps-update
 deps-update:
-	$(info Downloading dependencies)
-	go get -u ./...
+	go get -u -t ./...
 
 .PHONY: deps-analyze
-deps-analyze: gomod
+deps-analyze: $(TOOLDIR)/gomod
 	gomod analyze
 
 .PHONY: tidy
@@ -160,7 +155,7 @@ check-tidy:
 
 # Serve docs
 .PHONY: docs
-docs: godoc
+docs: $(TOOLDIR)/godoc
 	$(info serviing docs on http://127.0.0.1:6060/pkg/$(GOMODNAME)/)
 	@godoc -http=127.0.0.1:6060
 
@@ -169,5 +164,14 @@ docs: godoc
 #
 
 .PHONY: new-version
-new-version:
+new-version: check-npx
 	npx standard-version
+
+.PHONY: next-version
+next-version: check-npx
+	npx standard-version --dry-run
+
+.PHONY: check-npx
+check-npx:
+	$(if $(shell which npx),,\
+		$(error No npx found in PATH, please install NodeJS))

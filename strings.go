@@ -22,12 +22,12 @@ const (
 )
 
 var (
-	errNonASCIIAlphabet = fmt.Errorf(
-		"%w: alphabet contains non-ASCII characters", errBase,
+	ErrNonASCIIAlphabet = fmt.Errorf(
+		"%w: alphabet contains non-ASCII characters", Err,
 	)
 
-	errDNSLabelLength = fmt.Errorf(
-		"%w: DNS labels must be between 1 and 63 characters in length", errBase,
+	ErrDNSLabelLength = fmt.Errorf(
+		"%w: DNS labels must be between 1 and 63 characters in length", Err,
 	)
 )
 
@@ -127,7 +127,7 @@ func LowerNumeric(n int) (string, error) {
 // UnicodeString() if you need a alphabet with Unicode characters.
 func String(n int, alphabet string) (string, error) {
 	if !isASCII(alphabet) {
-		return "", errNonASCIIAlphabet
+		return "", ErrNonASCIIAlphabet
 	}
 
 	l := big.NewInt(int64(len(alphabet)))
@@ -180,7 +180,7 @@ func UnicodeString(n int, alphabet []rune) (string, error) {
 func DNSLabel(n int) (string, error) {
 	switch {
 	case n < 1 || n > 63:
-		return "", errDNSLabelLength
+		return "", ErrDNSLabelLength
 	case n == 1:
 		return String(1, lowerChars)
 	default:

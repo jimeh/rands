@@ -1,4 +1,4 @@
-package rands
+package randsmust
 
 import (
 	"encoding/base64"
@@ -7,6 +7,7 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/jimeh/rands"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -18,20 +19,10 @@ func TestHex(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := Hex(tt.n)
+			got := Hex(tt.n)
 
 			assert.Len(t, got, tt.n*2)
 			assertAllowedChars(t, allowed, got)
-		})
-	}
-}
-
-func BenchmarkHex(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = Hex(tt.n)
-			}
 		})
 	}
 }
@@ -44,23 +35,13 @@ func TestBase64(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := Base64(tt.n)
+			got := Base64(tt.n)
 
 			b, err := base64.StdEncoding.DecodeString(got)
 			require.NoError(t, err)
 
 			assert.Len(t, b, tt.n)
 			assertAllowedChars(t, allowed, got)
-		})
-	}
-}
-
-func BenchmarkBase64(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = Base64(tt.n)
-			}
 		})
 	}
 }
@@ -73,23 +54,13 @@ func TestBase64URL(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := Base64URL(tt.n)
+			got := Base64URL(tt.n)
 
 			b, err := base64.RawURLEncoding.DecodeString(got)
 			require.NoError(t, err)
 
 			assert.Len(t, b, tt.n)
 			assertAllowedChars(t, allowed, got)
-		})
-	}
-}
-
-func BenchmarkBase64URL(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = Base64URL(tt.n)
-			}
 		})
 	}
 }
@@ -101,20 +72,10 @@ func TestAlphanumeric(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := Alphanumeric(tt.n)
+			got := Alphanumeric(tt.n)
 
 			assert.Len(t, got, tt.n)
 			assertAllowedChars(t, allowed, got)
-		})
-	}
-}
-
-func BenchmarkAlphanumeric(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = Alphanumeric(tt.n)
-			}
 		})
 	}
 }
@@ -126,20 +87,10 @@ func TestAlphabetic(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := Alphabetic(tt.n)
+			got := Alphabetic(tt.n)
 
 			assert.Len(t, got, tt.n)
 			assertAllowedChars(t, allowed, got)
-		})
-	}
-}
-
-func BenchmarkAlphabetic(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = Alphabetic(tt.n)
-			}
 		})
 	}
 }
@@ -151,20 +102,10 @@ func TestNumeric(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := Numeric(tt.n)
+			got := Numeric(tt.n)
 
 			assert.Len(t, got, tt.n)
 			assertAllowedChars(t, allowed, got)
-		})
-	}
-}
-
-func BenchmarkNumeric(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = Numeric(tt.n)
-			}
 		})
 	}
 }
@@ -176,20 +117,10 @@ func TestUpper(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := Upper(tt.n)
+			got := Upper(tt.n)
 
 			assert.Len(t, got, tt.n)
 			assertAllowedChars(t, allowed, got)
-		})
-	}
-}
-
-func BenchmarkUpper(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = Upper(tt.n)
-			}
 		})
 	}
 }
@@ -201,20 +132,10 @@ func TestUpperNumeric(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := UpperNumeric(tt.n)
+			got := UpperNumeric(tt.n)
 
 			assert.Len(t, got, tt.n)
 			assertAllowedChars(t, allowed, got)
-		})
-	}
-}
-
-func BenchmarkUpperNumeric(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = UpperNumeric(tt.n)
-			}
 		})
 	}
 }
@@ -226,20 +147,10 @@ func TestLower(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := Lower(tt.n)
+			got := Lower(tt.n)
 
 			assert.Len(t, got, tt.n)
 			assertAllowedChars(t, allowed, got)
-		})
-	}
-}
-
-func BenchmarkLower(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = Lower(tt.n)
-			}
 		})
 	}
 }
@@ -251,7 +162,7 @@ func TestLowerNumeric(t *testing.T) {
 
 	for _, tt := range testCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := LowerNumeric(tt.n)
+			got := LowerNumeric(tt.n)
 
 			assert.Len(t, got, tt.n)
 			assertAllowedChars(t, allowed, got)
@@ -259,46 +170,36 @@ func TestLowerNumeric(t *testing.T) {
 	}
 }
 
-func BenchmarkLowerNumeric(b *testing.B) {
-	for _, tt := range testCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = LowerNumeric(tt.n)
-			}
-		})
-	}
-}
-
 var stringTestCases = []struct {
-	name     string
-	n        int
-	alphabet string
-	errIs    error
-	errStr   string
+	name       string
+	n          int
+	alphabet   string
+	panicErrIs error
+	panicStr   string
 }{
 	{
 		name: "greek",
 		n:    32,
 		alphabet: "αβγδεζηθικλμνξοπρστυφχψωςΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΩ" +
 			"άίόύώέϊϋΐΰΆΈΌΏΎΊ",
-		errIs:  ErrNonASCIIAlphabet,
-		errStr: "rands: alphabet contains non-ASCII characters",
+		panicErrIs: rands.ErrNonASCIIAlphabet,
+		panicStr:   "rands: alphabet contains non-ASCII characters",
 	},
 	{
 		name: "chinese",
 		n:    32,
 		alphabet: "的一是不了人我在有他这为之大来以个中上们到说国和地也子" +
 			"时道出而要于就下得可你年生",
-		errIs:  ErrNonASCIIAlphabet,
-		errStr: "rands: alphabet contains non-ASCII characters",
+		panicErrIs: rands.ErrNonASCIIAlphabet,
+		panicStr:   "rands: alphabet contains non-ASCII characters",
 	},
 	{
 		name: "japanese",
 		n:    32,
 		alphabet: "一九七二人入八力十下三千上口土夕大女子小山川五天中六円" +
 			"手文日月木水火犬王正出本右四",
-		errIs:  ErrNonASCIIAlphabet,
-		errStr: "rands: alphabet contains non-ASCII characters",
+		panicErrIs: rands.ErrNonASCIIAlphabet,
+		panicStr:   "rands: alphabet contains non-ASCII characters",
 	},
 	{
 		name:     "n=0",
@@ -372,29 +273,22 @@ func TestString(t *testing.T) {
 
 	for _, tt := range stringTestCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := String(tt.n, tt.alphabet)
+			var got string
+			p := recoverPanic(func() {
+				got = String(tt.n, tt.alphabet)
+			})
 
-			if tt.errIs == nil || tt.errStr == "" {
+			if tt.panicErrIs == nil || tt.panicStr == "" {
 				assert.Len(t, []rune(got), tt.n)
 				assertAllowedChars(t, tt.alphabet, got)
 			}
 
-			if tt.errIs != nil {
-				assert.ErrorIs(t, err, tt.errIs)
+			if tt.panicErrIs != nil {
+				assert.ErrorIs(t, p.(error), tt.panicErrIs)
 			}
 
-			if tt.errStr != "" {
-				assert.EqualError(t, err, tt.errStr)
-			}
-		})
-	}
-}
-
-func BenchmarkString(b *testing.B) {
-	for _, tt := range stringTestCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = String(tt.n, tt.alphabet)
+			if tt.panicStr != "" {
+				assert.EqualError(t, p.(error), tt.panicStr)
 			}
 		})
 	}
@@ -501,7 +395,7 @@ func TestUnicodeString(t *testing.T) {
 
 	for _, tt := range unicodeStringTestCases {
 		t.Run(tt.name, func(t *testing.T) {
-			got, _ := UnicodeString(tt.n, []rune(tt.alphabet))
+			got := UnicodeString(tt.n, []rune(tt.alphabet))
 
 			assert.Len(t, []rune(got), tt.n)
 			assertAllowedChars(t, tt.alphabet, got)
@@ -509,36 +403,24 @@ func TestUnicodeString(t *testing.T) {
 	}
 }
 
-func BenchmarkUnicodeString(b *testing.B) {
-	for _, tt := range stringTestCases {
-		alphabet := []rune(tt.alphabet)
-
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = UnicodeString(tt.n, alphabet)
-			}
-		})
-	}
-}
-
 var dnsLabelTestCases = []struct {
-	name   string
-	n      int
-	errIs  error
-	errStr string
+	name       string
+	n          int
+	panicErrIs error
+	panicStr   string
 }{
 	{
-		name:  "n=-128",
-		n:     -128,
-		errIs: ErrDNSLabelLength,
-		errStr: "rands: DNS labels must be between 1 and 63 characters " +
+		name:       "n=-128",
+		n:          -128,
+		panicErrIs: rands.ErrDNSLabelLength,
+		panicStr: "rands: DNS labels must be between 1 and 63 characters " +
 			"in length",
 	},
 	{
-		name:  "n=0",
-		n:     0,
-		errIs: ErrDNSLabelLength,
-		errStr: "rands: DNS labels must be between 1 and 63 characters " +
+		name:       "n=0",
+		n:          0,
+		panicErrIs: rands.ErrDNSLabelLength,
+		panicStr: "rands: DNS labels must be between 1 and 63 characters " +
 			"in length",
 	},
 	{name: "n=1", n: 1},
@@ -553,17 +435,17 @@ var dnsLabelTestCases = []struct {
 	{name: "n=32", n: 32},
 	{name: "n=63", n: 63},
 	{
-		name:  "n=64",
-		n:     64,
-		errIs: ErrDNSLabelLength,
-		errStr: "rands: DNS labels must be between 1 and 63 characters " +
+		name:       "n=64",
+		n:          64,
+		panicErrIs: rands.ErrDNSLabelLength,
+		panicStr: "rands: DNS labels must be between 1 and 63 characters " +
 			"in length",
 	},
 	{
-		name:  "n=128",
-		n:     128,
-		errIs: ErrDNSLabelLength,
-		errStr: "rands: DNS labels must be between 1 and 63 characters " +
+		name:       "n=128",
+		n:          128,
+		panicErrIs: rands.ErrDNSLabelLength,
+		panicStr: "rands: DNS labels must be between 1 and 63 characters " +
 			"in length",
 	},
 }
@@ -576,30 +458,23 @@ func TestDNSLabel(t *testing.T) {
 			// generate lots of labels to increase the chances of catching any
 			// obscure bugs
 			for i := 0; i < 10000; i++ {
-				got, err := DNSLabel(tt.n)
+				var got string
+				p := recoverPanic(func() {
+					got = DNSLabel(tt.n)
+				})
 
-				if tt.errIs == nil || tt.errStr == "" {
+				if tt.panicErrIs == nil || tt.panicStr == "" {
 					require.Len(t, got, tt.n)
 					asserDNSLabel(t, got)
 				}
 
-				if tt.errIs != nil {
-					require.ErrorIs(t, err, tt.errIs)
+				if tt.panicErrIs != nil {
+					require.ErrorIs(t, p.(error), tt.panicErrIs)
 				}
 
-				if tt.errStr != "" {
-					require.EqualError(t, err, tt.errStr)
+				if tt.panicStr != "" {
+					require.EqualError(t, p.(error), tt.panicStr)
 				}
-			}
-		})
-	}
-}
-
-func BenchmarkDNSLabel(b *testing.B) {
-	for _, tt := range dnsLabelTestCases {
-		b.Run(tt.name, func(b *testing.B) {
-			for n := 0; n < b.N; n++ {
-				_, _ = DNSLabel(tt.n)
 			}
 		})
 	}
@@ -613,25 +488,18 @@ func TestUUID(t *testing.T) {
 	)
 
 	for i := 0; i < 10000; i++ {
-		got, err := UUID()
-		require.NoError(t, err)
+		got := UUID()
 		require.Regexp(t, m, got)
 
 		raw := strings.ReplaceAll(got, "-", "")
 		b := make([]byte, 16)
-		_, err = hex.Decode(b, []byte(raw))
+		_, err := hex.Decode(b, []byte(raw))
 		require.NoError(t, err)
 
 		require.Equal(t, 4, int(b[6]>>4), "version is not 4")
 		require.Equal(t, byte(0x80), b[8]&0xc0,
 			"variant is not RFC 4122",
 		)
-	}
-}
-
-func BenchmarkUUID(b *testing.B) {
-	for n := 0; n < b.N; n++ {
-		_, _ = UUID()
 	}
 }
 

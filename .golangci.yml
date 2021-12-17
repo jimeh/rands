@@ -9,6 +9,8 @@ linters-settings:
   govet:
     check-shadowing: true
     enable-all: true
+    disable:
+      - fieldalignment
   lll:
     line-length: 80
     tab-width: 4
@@ -20,43 +22,52 @@ linters-settings:
 linters:
   disable-all: true
   enable:
+    - asciicheck
     - bodyclose
     - deadcode
     - depguard
-    - dupl
+    - durationcheck
     - errcheck
+    - errorlint
+    - exhaustive
+    - exportloopref
     - funlen
     - gochecknoinits
     - goconst
     - gocritic
     - gocyclo
-    - goerr113
+    - godot
+    - gofumpt
     - goimports
-    - golint
     - goprintffuncname
     - gosec
     - gosimple
     - govet
+    - importas
     - ineffassign
     - lll
     - misspell
     - nakedret
+    - nilerr
     - nlreturn
     - noctx
     - nolintlint
-    - scopelint
+    - prealloc
+    - predeclared
+    - revive
+    - rowserrcheck
     - sqlclosecheck
     - staticcheck
     - structcheck
     - typecheck
     - unconvert
+    - unparam
     - unused
     - varcheck
+    - wastedassign
     - whitespace
 
 issues:
-  include:
-  # - EXC0002 # disable excluding of issues about comments from golint
   exclude:
     - Using the variable on range scope `tt` in function literal
     - Using the variable on range scope `tc` in function literal
@@ -69,6 +80,12 @@ issues:
       linters:
         - lll
     - source: "`json:"
+      linters:
+        - lll
+    - source: "`xml:"
+      linters:
+        - lll
+    - source: "`yaml:"
       linters:
         - lll
 

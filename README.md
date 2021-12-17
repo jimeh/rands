@@ -76,7 +76,7 @@ n, err := rands.Int64(int64(9223372036854775807)) // => 8256935979116161233
 b, err := rands.Bytes(8) // => [0 220 137 243 135 204 34 63]
 ```
 
-## [`randsmust`](https://pkg.go.dev/github.com/jimeh/rands/must) package
+## [`randsmust`](https://pkg.go.dev/github.com/jimeh/rands/randsmust) package
 
 `randsmust` is specifically intended as an alternative to `rands` for use in
 tests. All functions return a single value, and panic in the event of an error.
@@ -123,7 +123,7 @@ b := randsmust.Bytes(8) // => [205 128 54 95 0 95 53 51]
 Please see the Go Reference for documentation and examples:
 
 - [`rands`](https://pkg.go.dev/github.com/jimeh/rands)
-- [`randsmust`](https://pkg.go.dev/github.com/jimeh/rands/must)
+- [`randsmust`](https://pkg.go.dev/github.com/jimeh/rands/randsmust)
 
 ## Benchmarks
 

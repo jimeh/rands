@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.3.0](https://github.com/jimeh/rands/compare/v0.2.0...v0.3.0) (2021-12-17)
+
+
+### Features
+
+* **error:** export error variables ([164ccc4](https://github.com/jimeh/rands/commit/164ccc497ad9880d43b22b74d6a83c5e68d79334))
+* **randsmust:** add randsmust package ([22fe517](https://github.com/jimeh/rands/commit/22fe517baa8b6939503c0c804dd71628f7d473a3))
+
 ## [0.2.0](https://github.com/jimeh/rands/compare/v0.1.1...v0.2.0) (2021-03-16)
 
 

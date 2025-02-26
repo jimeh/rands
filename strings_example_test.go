@@ -132,3 +132,12 @@ func ExampleUUID() {
 
 	fmt.Println(s) // => 6a1c4f65-d5d6-4a28-aa51-eaa94fa7ad4a
 }
+
+func ExampleUUIDv7() {
+	s, err := rands.UUIDv7()
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(s) // => 01954a3a-a06f-7848-b836-bced92ae5a1a
+}

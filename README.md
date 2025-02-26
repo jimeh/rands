@@ -53,6 +53,7 @@ s, err := rands.UnicodeString(16, []rune("九七二人入八力十下三千上�
 
 s, err := rands.DNSLabel(16) // => z0ij9o8qkbs0ru-h
 s, err := rands.UUID()       // => a62b8712-f238-43ba-a47e-333f5fffe785
+s, err := rands.UUIDv7()     // => 01954a31-867f-7ffb-876e-b818f960ec3b
 
 n, err := rands.Int(2147483647)                   // => 1334400235
 n, err := rands.Int64(int64(9223372036854775807)) // => 8256935979116161233
@@ -95,6 +96,7 @@ s := randsmust.UnicodeString(16, []rune("九七二人入八力十下三千上口
 
 s := randsmust.DNSLabel(16) // => pu31o0gqyk76x35f
 s := randsmust.UUID()       // => d616c873-f3dd-4690-bcd6-ed307eec1105
+s := randsmust.UUIDv7()     // => 01954a30-add2-7590-8238-6cf6b2790c1e
 
 n := randsmust.Int(2147483647)                   // => 1293388115
 n := randsmust.Int64(int64(9223372036854775807)) // => 6168113630900161239

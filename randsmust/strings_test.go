@@ -6,6 +6,7 @@ import (
 	"regexp"
 	"strings"
 	"testing"
+	"time"
 
 	"github.com/jimeh/rands"
 	"github.com/stretchr/testify/assert"
@@ -487,9 +488,17 @@ func TestUUID(t *testing.T) {
 		`^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$`,
 	)
 
+	seen := make(map[string]struct{})
+
 	for i := 0; i < 10000; i++ {
 		got := UUID()
 		require.Regexp(t, m, got)
+
+		if _, ok := seen[got]; ok {
+			require.FailNow(t, "duplicate UUID")
+		}
+
+		seen[got] = struct{}{}
 
 		raw := strings.ReplaceAll(got, "-", "")
 		b := make([]byte, 16)
@@ -497,9 +506,61 @@ func TestUUID(t *testing.T) {
 		require.NoError(t, err)
 
 		require.Equal(t, 4, int(b[6]>>4), "version is not 4")
-		require.Equal(t, byte(0x80), b[8]&0xc0,
-			"variant is not RFC 4122",
-		)
+		require.Equal(t, byte(0x80), b[8]&0xc0, "variant is not RFC 4122")
+	}
+}
+
+func TestUUIDv7(t *testing.T) {
+	t.Parallel()
+
+	m := regexp.MustCompile(
+		`^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$`,
+	)
+
+	// Store timestamps to verify they're increasing
+	var lastTimestampBytes int64
+	var lastUUID string
+
+	seen := make(map[string]struct{})
+	for i := 0; i < 10000; i++ {
+		got := UUIDv7()
+		require.Regexp(t, m, got)
+
+		if _, ok := seen[got]; ok {
+			require.FailNow(t, "duplicate UUID")
+		}
+
+		seen[got] = struct{}{}
+
+		raw := strings.ReplaceAll(got, "-", "")
+		b := make([]byte, 16)
+		_, err := hex.Decode(b, []byte(raw))
+		require.NoError(t, err)
+
+		// Check version is 7
+		require.Equal(t, 7, int(b[6]>>4), "version is not 7")
+
+		// Check variant is RFC 4122
+		require.Equal(t, byte(0x80), b[8]&0xc0, "variant is not RFC 4122")
+
+		// Extract timestamp bytes
+		timestampBytes := int64(b[0])<<40 | int64(b[1])<<32 | int64(b[2])<<24 |
+			int64(b[3])<<16 | int64(b[4])<<8 | int64(b[5])
+
+		// Verify timestamp is within 100 milliseconds of current time
+		tsTime := time.UnixMilli(timestampBytes)
+		require.WithinDuration(t, time.Now(), tsTime, 100*time.Millisecond,
+			"timestamp is not within 100 milliseconds of current time")
+
+		// After the first UUID, verify that UUIDs are monotonically increasing
+		if i > 0 && timestampBytes < lastTimestampBytes {
+			require.FailNow(t, "UUIDs are not monotonically increasing",
+				"current: %s (ts: %d), previous: %s (ts: %d)",
+				got, timestampBytes, lastUUID, lastTimestampBytes)
+		}
+
+		lastTimestampBytes = timestampBytes
+		lastUUID = got
 	}
 }
 

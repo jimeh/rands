@@ -75,3 +75,8 @@ func ExampleUUID() {
 	s := randsmust.UUID()
 	fmt.Println(s) // => 5baa35a6-9a46-49b4-91d0-9530173e118d
 }
+
+func ExampleUUIDv7() {
+	s := randsmust.UUIDv7()
+	fmt.Println(s) // => 01954a3a-a06f-7186-8774-51a770503eb2
+}

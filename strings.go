@@ -171,12 +171,12 @@ func UnicodeString(n int, alphabet []rune) (string, error) {
 //
 // In summary, the generated random string will:
 //
-//  - be between 1 and 63 characters in length, other n values returns a error
-//  - first character will be one of a-z
-//  - last character will be one of a-z or 0-9
-//  - in-between first and last characters consist of a-z, 0-9, or "-"
-//  - potentially contain two or more consecutive "-", except the 3rd and 4th
-//    characters, as that would violate RFC 5891, section 4.2.3.1.
+//   - be between 1 and 63 characters in length, other n values returns a error
+//   - first character will be one of a-z
+//   - last character will be one of a-z or 0-9
+//   - in-between first and last characters consist of a-z, 0-9, or "-"
+//   - potentially contain two or more consecutive "-", except the 3rd and 4th
+//     characters, as that would violate RFC 5891, section 4.2.3.1.
 func DNSLabel(n int) (string, error) {
 	switch {
 	case n < 1 || n > 63:

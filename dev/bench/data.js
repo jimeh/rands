@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1615861813693,
+  "lastUpdate": 1740706274832,
   "repoUrl": "https://github.com/jimeh/rands",
   "entries": {
     "Benchmark": [
@@ -2736,6 +2736,1296 @@ window.BENCHMARK_DATA = {
             "value": 1268,
             "unit": "ns/op",
             "extra": "968766 times"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "contact@jimeh.me",
+            "name": "Jim Myhrberg",
+            "username": "jimeh"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "127ebbaa039b75b91afd8aa365a033e1c33b5505",
+          "message": "ci(benchmarks): set correct permissions for benchmarks job (#8)",
+          "timestamp": "2025-02-28T01:24:52Z",
+          "tree_id": "717ce9f50a25392711c4b22464c5c826205dfa9c",
+          "url": "https://github.com/jimeh/rands/commit/127ebbaa039b75b91afd8aa365a033e1c33b5505"
+        },
+        "date": 1740706274020,
+        "tool": "go",
+        "benches": [
+          {
+            "name": "BenchmarkBytes__n_0",
+            "value": 9.953,
+            "unit": "ns/op",
+            "extra": "115885690 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_1",
+            "value": 566.2,
+            "unit": "ns/op",
+            "extra": "2125077 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_2",
+            "value": 572.3,
+            "unit": "ns/op",
+            "extra": "2096768 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_7",
+            "value": 573,
+            "unit": "ns/op",
+            "extra": "2069499 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_8",
+            "value": 574.4,
+            "unit": "ns/op",
+            "extra": "2087272 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_16",
+            "value": 587.8,
+            "unit": "ns/op",
+            "extra": "2050507 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_32",
+            "value": 600.6,
+            "unit": "ns/op",
+            "extra": "2006715 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_128",
+            "value": 909.6,
+            "unit": "ns/op",
+            "extra": "1319036 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_1024",
+            "value": 3337,
+            "unit": "ns/op",
+            "extra": "363636 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_409600",
+            "value": 1102819,
+            "unit": "ns/op",
+            "extra": "1089 times"
+          },
+          {
+            "name": "BenchmarkBytes__n_2394345",
+            "value": 6359089,
+            "unit": "ns/op",
+            "extra": "187 times"
+          },
+          {
+            "name": "BenchmarkInt__n__2394345",
+            "value": 2.188,
+            "unit": "ns/op",
+            "extra": "544191464 times"
+          },
+          {
+            "name": "BenchmarkInt__n__409600",
+            "value": 2.188,
+            "unit": "ns/op",
+            "extra": "549046150 times"
+          },
+          {
+            "name": "BenchmarkInt__n__1024",
+            "value": 2.193,
+            "unit": "ns/op",
+            "extra": "549057643 times"
+          },
+          {
+            "name": "BenchmarkInt__n__128",
+            "value": 2.183,
+            "unit": "ns/op",
+            "extra": "549933424 times"
+          },
+          {
+            "name": "BenchmarkInt__n__32",
+            "value": 2.181,
+            "unit": "ns/op",
+            "extra": "549685360 times"
+          },
+          {
+            "name": "BenchmarkInt__n__16",
+            "value": 2.18,
+            "unit": "ns/op",
+            "extra": "549835801 times"
+          },
+          {
+            "name": "BenchmarkInt__n__8",
+            "value": 2.182,
+            "unit": "ns/op",
+            "extra": "549728398 times"
+          },
+          {
+            "name": "BenchmarkInt__n__7",
+            "value": 2.182,
+            "unit": "ns/op",
+            "extra": "549634479 times"
+          },
+          {
+            "name": "BenchmarkInt__n__2",
+            "value": 2.182,
+            "unit": "ns/op",
+            "extra": "549823335 times"
+          },
+          {
+            "name": "BenchmarkInt__n__1",
+            "value": 2.191,
+            "unit": "ns/op",
+            "extra": "548738492 times"
+          },
+          {
+            "name": "BenchmarkInt__n_0",
+            "value": 2.179,
+            "unit": "ns/op",
+            "extra": "549415726 times"
+          },
+          {
+            "name": "BenchmarkInt__n_1",
+            "value": 95.54,
+            "unit": "ns/op",
+            "extra": "12527426 times"
+          },
+          {
+            "name": "BenchmarkInt__n_2",
+            "value": 727.1,
+            "unit": "ns/op",
+            "extra": "1657282 times"
+          },
+          {
+            "name": "BenchmarkInt__n_7",
+            "value": 797.6,
+            "unit": "ns/op",
+            "extra": "1510088 times"
+          },
+          {
+            "name": "BenchmarkInt__n_8",
+            "value": 714.2,
+            "unit": "ns/op",
+            "extra": "1678375 times"
+          },
+          {
+            "name": "BenchmarkInt__n_16",
+            "value": 711.9,
+            "unit": "ns/op",
+            "extra": "1678153 times"
+          },
+          {
+            "name": "BenchmarkInt__n_32",
+            "value": 714.5,
+            "unit": "ns/op",
+            "extra": "1687404 times"
+          },
+          {
+            "name": "BenchmarkInt__n_128",
+            "value": 713.1,
+            "unit": "ns/op",
+            "extra": "1678950 times"
+          },
+          {
+            "name": "BenchmarkInt__n_1024",
+            "value": 717.2,
+            "unit": "ns/op",
+            "extra": "1664560 times"
+          },
+          {
+            "name": "BenchmarkInt__n_409600",
+            "value": 879.4,
+            "unit": "ns/op",
+            "extra": "1363995 times"
+          },
+          {
+            "name": "BenchmarkInt__n_2394345",
+            "value": 1148,
+            "unit": "ns/op",
+            "extra": "1000000 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__2394345",
+            "value": 2.189,
+            "unit": "ns/op",
+            "extra": "540030813 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__409600",
+            "value": 2.18,
+            "unit": "ns/op",
+            "extra": "550664926 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__1024",
+            "value": 2.179,
+            "unit": "ns/op",
+            "extra": "549844675 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__128",
+            "value": 2.18,
+            "unit": "ns/op",
+            "extra": "550050066 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__32",
+            "value": 2.18,
+            "unit": "ns/op",
+            "extra": "550148824 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__16",
+            "value": 2.182,
+            "unit": "ns/op",
+            "extra": "547822870 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__8",
+            "value": 2.18,
+            "unit": "ns/op",
+            "extra": "550875141 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__7",
+            "value": 2.177,
+            "unit": "ns/op",
+            "extra": "549728816 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__2",
+            "value": 2.181,
+            "unit": "ns/op",
+            "extra": "550591066 times"
+          },
+          {
+            "name": "BenchmarkInt64__n__1",
+            "value": 2.178,
+            "unit": "ns/op",
+            "extra": "549113367 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_0",
+            "value": 2.192,
+            "unit": "ns/op",
+            "extra": "550120502 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_1",
+            "value": 91.83,
+            "unit": "ns/op",
+            "extra": "12850476 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_2",
+            "value": 717.5,
+            "unit": "ns/op",
+            "extra": "1679251 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_7",
+            "value": 799,
+            "unit": "ns/op",
+            "extra": "1508484 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_8",
+            "value": 712.8,
+            "unit": "ns/op",
+            "extra": "1678544 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_16",
+            "value": 712.2,
+            "unit": "ns/op",
+            "extra": "1682691 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_32",
+            "value": 714.4,
+            "unit": "ns/op",
+            "extra": "1677898 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_128",
+            "value": 718.8,
+            "unit": "ns/op",
+            "extra": "1693304 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_1024",
+            "value": 721.1,
+            "unit": "ns/op",
+            "extra": "1661610 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_409600",
+            "value": 878.4,
+            "unit": "ns/op",
+            "extra": "1365981 times"
+          },
+          {
+            "name": "BenchmarkInt64__n_2394345",
+            "value": 1153,
+            "unit": "ns/op",
+            "extra": "1000000 times"
+          },
+          {
+            "name": "BenchmarkHex__n_0",
+            "value": 19.44,
+            "unit": "ns/op",
+            "extra": "62354421 times"
+          },
+          {
+            "name": "BenchmarkHex__n_1",
+            "value": 606.1,
+            "unit": "ns/op",
+            "extra": "1978414 times"
+          },
+          {
+            "name": "BenchmarkHex__n_2",
+            "value": 616.7,
+            "unit": "ns/op",
+            "extra": "1958010 times"
+          },
+          {
+            "name": "BenchmarkHex__n_7",
+            "value": 637,
+            "unit": "ns/op",
+            "extra": "1875118 times"
+          },
+          {
+            "name": "BenchmarkHex__n_8",
+            "value": 642.2,
+            "unit": "ns/op",
+            "extra": "1873590 times"
+          },
+          {
+            "name": "BenchmarkHex__n_16",
+            "value": 652.5,
+            "unit": "ns/op",
+            "extra": "1840376 times"
+          },
+          {
+            "name": "BenchmarkHex__n_32",
+            "value": 674.2,
+            "unit": "ns/op",
+            "extra": "1753677 times"
+          },
+          {
+            "name": "BenchmarkHex__n_128",
+            "value": 1130,
+            "unit": "ns/op",
+            "extra": "1000000 times"
+          },
+          {
+            "name": "BenchmarkHex__n_1024",
+            "value": 4825,
+            "unit": "ns/op",
+            "extra": "248851 times"
+          },
+          {
+            "name": "BenchmarkHex__n_409600",
+            "value": 1631399,
+            "unit": "ns/op",
+            "extra": "740 times"
+          },
+          {
+            "name": "BenchmarkHex__n_2394345",
+            "value": 9458934,
+            "unit": "ns/op",
+            "extra": "124 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_0",
+            "value": 21.19,
+            "unit": "ns/op",
+            "extra": "57719212 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_1",
+            "value": 617.1,
+            "unit": "ns/op",
+            "extra": "1935829 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_2",
+            "value": 621.5,
+            "unit": "ns/op",
+            "extra": "1936144 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_7",
+            "value": 654.5,
+            "unit": "ns/op",
+            "extra": "1829845 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_8",
+            "value": 656.5,
+            "unit": "ns/op",
+            "extra": "1816623 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_16",
+            "value": 672.7,
+            "unit": "ns/op",
+            "extra": "1783204 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_32",
+            "value": 697,
+            "unit": "ns/op",
+            "extra": "1718979 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_128",
+            "value": 1124,
+            "unit": "ns/op",
+            "extra": "1000000 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_1024",
+            "value": 4557,
+            "unit": "ns/op",
+            "extra": "261686 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_409600",
+            "value": 1534468,
+            "unit": "ns/op",
+            "extra": "774 times"
+          },
+          {
+            "name": "BenchmarkBase64__n_2394345",
+            "value": 9136777,
+            "unit": "ns/op",
+            "extra": "130 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_0",
+            "value": 21.05,
+            "unit": "ns/op",
+            "extra": "57064832 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_1",
+            "value": 613.8,
+            "unit": "ns/op",
+            "extra": "1917310 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_2",
+            "value": 614.7,
+            "unit": "ns/op",
+            "extra": "1954306 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_7",
+            "value": 653.9,
+            "unit": "ns/op",
+            "extra": "1821554 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_8",
+            "value": 657.5,
+            "unit": "ns/op",
+            "extra": "1827972 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_16",
+            "value": 669.7,
+            "unit": "ns/op",
+            "extra": "1785438 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_32",
+            "value": 697.5,
+            "unit": "ns/op",
+            "extra": "1726051 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_128",
+            "value": 1131,
+            "unit": "ns/op",
+            "extra": "1000000 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_1024",
+            "value": 4575,
+            "unit": "ns/op",
+            "extra": "261123 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_409600",
+            "value": 1544418,
+            "unit": "ns/op",
+            "extra": "765 times"
+          },
+          {
+            "name": "BenchmarkBase64URL__n_2394345",
+            "value": 9015973,
+            "unit": "ns/op",
+            "extra": "132 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_0",
+            "value": 82.05,
+            "unit": "ns/op",
+            "extra": "14681473 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_1",
+            "value": 808.8,
+            "unit": "ns/op",
+            "extra": "1483893 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_2",
+            "value": 1528,
+            "unit": "ns/op",
+            "extra": "794414 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_7",
+            "value": 5053,
+            "unit": "ns/op",
+            "extra": "238004 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_8",
+            "value": 5815,
+            "unit": "ns/op",
+            "extra": "208189 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_16",
+            "value": 11484,
+            "unit": "ns/op",
+            "extra": "104409 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_32",
+            "value": 22734,
+            "unit": "ns/op",
+            "extra": "53232 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_128",
+            "value": 89976,
+            "unit": "ns/op",
+            "extra": "13358 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_1024",
+            "value": 723184,
+            "unit": "ns/op",
+            "extra": "1645 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_409600",
+            "value": 287260093,
+            "unit": "ns/op",
+            "extra": "4 times"
+          },
+          {
+            "name": "BenchmarkAlphanumeric__n_2394345",
+            "value": 1691485826,
+            "unit": "ns/op",
+            "extra": "1 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_0",
+            "value": 64.42,
+            "unit": "ns/op",
+            "extra": "18172050 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_1",
+            "value": 906.5,
+            "unit": "ns/op",
+            "extra": "1326280 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_2",
+            "value": 1747,
+            "unit": "ns/op",
+            "extra": "694785 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_7",
+            "value": 5811,
+            "unit": "ns/op",
+            "extra": "208264 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_8",
+            "value": 6663,
+            "unit": "ns/op",
+            "extra": "178111 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_16",
+            "value": 13196,
+            "unit": "ns/op",
+            "extra": "90900 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_32",
+            "value": 26309,
+            "unit": "ns/op",
+            "extra": "45692 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_128",
+            "value": 104760,
+            "unit": "ns/op",
+            "extra": "10000 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_1024",
+            "value": 834507,
+            "unit": "ns/op",
+            "extra": "1444 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_409600",
+            "value": 334018114,
+            "unit": "ns/op",
+            "extra": "4 times"
+          },
+          {
+            "name": "BenchmarkAlphabetic__n_2394345",
+            "value": 1963652517,
+            "unit": "ns/op",
+            "extra": "1 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_0",
+            "value": 33.78,
+            "unit": "ns/op",
+            "extra": "35196824 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_1",
+            "value": 1084,
+            "unit": "ns/op",
+            "extra": "1000000 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_2",
+            "value": 2126,
+            "unit": "ns/op",
+            "extra": "561816 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_7",
+            "value": 7264,
+            "unit": "ns/op",
+            "extra": "165843 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_8",
+            "value": 8345,
+            "unit": "ns/op",
+            "extra": "144628 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_16",
+            "value": 16550,
+            "unit": "ns/op",
+            "extra": "72680 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_32",
+            "value": 32933,
+            "unit": "ns/op",
+            "extra": "36308 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_128",
+            "value": 131167,
+            "unit": "ns/op",
+            "extra": "9254 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_1024",
+            "value": 1047234,
+            "unit": "ns/op",
+            "extra": "1153 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_409600",
+            "value": 419055698,
+            "unit": "ns/op",
+            "extra": "3 times"
+          },
+          {
+            "name": "BenchmarkNumeric__n_2394345",
+            "value": 2455852953,
+            "unit": "ns/op",
+            "extra": "1 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_0",
+            "value": 44.79,
+            "unit": "ns/op",
+            "extra": "26623400 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_1",
+            "value": 891.8,
+            "unit": "ns/op",
+            "extra": "1349552 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_2",
+            "value": 1727,
+            "unit": "ns/op",
+            "extra": "701365 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_7",
+            "value": 5792,
+            "unit": "ns/op",
+            "extra": "206474 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_8",
+            "value": 6660,
+            "unit": "ns/op",
+            "extra": "181219 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_16",
+            "value": 13196,
+            "unit": "ns/op",
+            "extra": "91364 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_32",
+            "value": 26336,
+            "unit": "ns/op",
+            "extra": "45522 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_128",
+            "value": 104743,
+            "unit": "ns/op",
+            "extra": "10000 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_1024",
+            "value": 832742,
+            "unit": "ns/op",
+            "extra": "1444 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_409600",
+            "value": 333262395,
+            "unit": "ns/op",
+            "extra": "4 times"
+          },
+          {
+            "name": "BenchmarkUpper__n_2394345",
+            "value": 1955700735,
+            "unit": "ns/op",
+            "extra": "1 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_0",
+            "value": 51.07,
+            "unit": "ns/op",
+            "extra": "23442351 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_1",
+            "value": 1200,
+            "unit": "ns/op",
+            "extra": "1000000 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_2",
+            "value": 2349,
+            "unit": "ns/op",
+            "extra": "511519 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_7",
+            "value": 7987,
+            "unit": "ns/op",
+            "extra": "151664 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_8",
+            "value": 9172,
+            "unit": "ns/op",
+            "extra": "131476 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_16",
+            "value": 18150,
+            "unit": "ns/op",
+            "extra": "66552 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_32",
+            "value": 36154,
+            "unit": "ns/op",
+            "extra": "33211 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_128",
+            "value": 145542,
+            "unit": "ns/op",
+            "extra": "8280 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_1024",
+            "value": 1148043,
+            "unit": "ns/op",
+            "extra": "1048 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_409600",
+            "value": 459942996,
+            "unit": "ns/op",
+            "extra": "3 times"
+          },
+          {
+            "name": "BenchmarkUpperNumeric__n_2394345",
+            "value": 2696726161,
+            "unit": "ns/op",
+            "extra": "1 times"
+          },
+          {
+            "name": "BenchmarkLower__n_0",
+            "value": 44.47,
+            "unit": "ns/op",
+            "extra": "27018650 times"
+          },
+          {
+            "name": "BenchmarkLower__n_1",
+            "value": 890.4,
+            "unit": "ns/op",
+            "extra": "1353326 times"
+          },
+          {
+            "name": "BenchmarkLower__n_2",
+            "value": 1732,
+            "unit": "ns/op",
+            "extra": "682100 times"
+          },
+          {
+            "name": "BenchmarkLower__n_7",
+            "value": 5827,
+            "unit": "ns/op",
+            "extra": "208650 times"
+          },
+          {
+            "name": "BenchmarkLower__n_8",
+            "value": 6635,
+            "unit": "ns/op",
+            "extra": "182364 times"
+          },
+          {
+            "name": "BenchmarkLower__n_16",
+            "value": 13188,
+            "unit": "ns/op",
+            "extra": "90693 times"
+          },
+          {
+            "name": "BenchmarkLower__n_32",
+            "value": 26298,
+            "unit": "ns/op",
+            "extra": "45841 times"
+          },
+          {
+            "name": "BenchmarkLower__n_128",
+            "value": 104593,
+            "unit": "ns/op",
+            "extra": "10000 times"
+          },
+          {
+            "name": "BenchmarkLower__n_1024",
+            "value": 832955,
+            "unit": "ns/op",
+            "extra": "1410 times"
+          },
+          {
+            "name": "BenchmarkLower__n_409600",
+            "value": 333402484,
+            "unit": "ns/op",
+            "extra": "3 times"
+          },
+          {
+            "name": "BenchmarkLower__n_2394345",
+            "value": 1954018455,
+            "unit": "ns/op",
+            "extra": "1 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_0",
+            "value": 51.24,
+            "unit": "ns/op",
+            "extra": "23060228 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_1",
+            "value": 1209,
+            "unit": "ns/op",
+            "extra": "1000000 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_2",
+            "value": 2350,
+            "unit": "ns/op",
+            "extra": "517473 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_7",
+            "value": 7965,
+            "unit": "ns/op",
+            "extra": "149217 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_8",
+            "value": 9097,
+            "unit": "ns/op",
+            "extra": "131935 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_16",
+            "value": 18096,
+            "unit": "ns/op",
+            "extra": "66361 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_32",
+            "value": 36050,
+            "unit": "ns/op",
+            "extra": "33141 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_128",
+            "value": 143694,
+            "unit": "ns/op",
+            "extra": "8097 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_1024",
+            "value": 1147981,
+            "unit": "ns/op",
+            "extra": "1039 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_409600",
+            "value": 459254373,
+            "unit": "ns/op",
+            "extra": "3 times"
+          },
+          {
+            "name": "BenchmarkLowerNumeric__n_2394345",
+            "value": 2695806864,
+            "unit": "ns/op",
+            "extra": "1 times"
+          },
+          {
+            "name": "BenchmarkString__greek",
+            "value": 7.179,
+            "unit": "ns/op",
+            "extra": "165667994 times"
+          },
+          {
+            "name": "BenchmarkString__chinese",
+            "value": 7.788,
+            "unit": "ns/op",
+            "extra": "153702711 times"
+          },
+          {
+            "name": "BenchmarkString__japanese",
+            "value": 7.783,
+            "unit": "ns/op",
+            "extra": "154047727 times"
+          },
+          {
+            "name": "BenchmarkString__n_0",
+            "value": 68.8,
+            "unit": "ns/op",
+            "extra": "17992094 times"
+          },
+          {
+            "name": "BenchmarkString__n_1",
+            "value": 888.2,
+            "unit": "ns/op",
+            "extra": "1350348 times"
+          },
+          {
+            "name": "BenchmarkString__n_2",
+            "value": 1713,
+            "unit": "ns/op",
+            "extra": "681600 times"
+          },
+          {
+            "name": "BenchmarkString__n_7",
+            "value": 5741,
+            "unit": "ns/op",
+            "extra": "210520 times"
+          },
+          {
+            "name": "BenchmarkString__n_8",
+            "value": 6590,
+            "unit": "ns/op",
+            "extra": "181298 times"
+          },
+          {
+            "name": "BenchmarkString__n_16",
+            "value": 13145,
+            "unit": "ns/op",
+            "extra": "92631 times"
+          },
+          {
+            "name": "BenchmarkString__n_32",
+            "value": 25830,
+            "unit": "ns/op",
+            "extra": "46160 times"
+          },
+          {
+            "name": "BenchmarkString__n_128",
+            "value": 102449,
+            "unit": "ns/op",
+            "extra": "10000 times"
+          },
+          {
+            "name": "BenchmarkString__n_1024",
+            "value": 819170,
+            "unit": "ns/op",
+            "extra": "1472 times"
+          },
+          {
+            "name": "BenchmarkString__n_409600",
+            "value": 334871235,
+            "unit": "ns/op",
+            "extra": "4 times"
+          },
+          {
+            "name": "BenchmarkString__n_2394345",
+            "value": 1924012625,
+            "unit": "ns/op",
+            "extra": "1 times"
+          },
+          {
+            "name": "BenchmarkString__uppercase",
+            "value": 15252,
+            "unit": "ns/op",
+            "extra": "78805 times"
+          },
+          {
+            "name": "BenchmarkString__lowercase",
+            "value": 15207,
+            "unit": "ns/op",
+            "extra": "79264 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__greek",
+            "value": 22191,
+            "unit": "ns/op",
+            "extra": "54226 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__chinese",
+            "value": 33426,
+            "unit": "ns/op",
+            "extra": "36115 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__japanese",
+            "value": 32538,
+            "unit": "ns/op",
+            "extra": "37087 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_0",
+            "value": 39.71,
+            "unit": "ns/op",
+            "extra": "29958972 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_1",
+            "value": 875,
+            "unit": "ns/op",
+            "extra": "1376601 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_2",
+            "value": 1691,
+            "unit": "ns/op",
+            "extra": "715287 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_7",
+            "value": 5755,
+            "unit": "ns/op",
+            "extra": "210176 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_8",
+            "value": 6541,
+            "unit": "ns/op",
+            "extra": "184384 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_16",
+            "value": 13044,
+            "unit": "ns/op",
+            "extra": "91890 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_32",
+            "value": 25995,
+            "unit": "ns/op",
+            "extra": "46183 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_128",
+            "value": 104868,
+            "unit": "ns/op",
+            "extra": "10000 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_1024",
+            "value": 828043,
+            "unit": "ns/op",
+            "extra": "1455 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_409600",
+            "value": 332023980,
+            "unit": "ns/op",
+            "extra": "4 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__n_2394345",
+            "value": 1911064699,
+            "unit": "ns/op",
+            "extra": "1 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__uppercase",
+            "value": 15329,
+            "unit": "ns/op",
+            "extra": "78066 times"
+          },
+          {
+            "name": "BenchmarkUnicodeString__lowercase",
+            "value": 15317,
+            "unit": "ns/op",
+            "extra": "78559 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n__128",
+            "value": 2.503,
+            "unit": "ns/op",
+            "extra": "471507691 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_0",
+            "value": 2.49,
+            "unit": "ns/op",
+            "extra": "481490283 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_1",
+            "value": 905.4,
+            "unit": "ns/op",
+            "extra": "1329746 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_2",
+            "value": 2156,
+            "unit": "ns/op",
+            "extra": "556567 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_3",
+            "value": 3352,
+            "unit": "ns/op",
+            "extra": "351846 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_4",
+            "value": 4480,
+            "unit": "ns/op",
+            "extra": "266650 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_5",
+            "value": 5684,
+            "unit": "ns/op",
+            "extra": "211040 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_6",
+            "value": 6801,
+            "unit": "ns/op",
+            "extra": "177376 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_7",
+            "value": 7980,
+            "unit": "ns/op",
+            "extra": "150907 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_8",
+            "value": 9150,
+            "unit": "ns/op",
+            "extra": "132368 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_16",
+            "value": 18484,
+            "unit": "ns/op",
+            "extra": "63914 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_32",
+            "value": 36781,
+            "unit": "ns/op",
+            "extra": "32590 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_63",
+            "value": 72843,
+            "unit": "ns/op",
+            "extra": "16490 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_64",
+            "value": 2.497,
+            "unit": "ns/op",
+            "extra": "473770116 times"
+          },
+          {
+            "name": "BenchmarkDNSLabel__n_128",
+            "value": 2.493,
+            "unit": "ns/op",
+            "extra": "481072515 times"
+          },
+          {
+            "name": "BenchmarkUUID_4",
+            "value": 647,
+            "unit": "ns/op",
+            "extra": "1839091 times"
           }
         ]
       }

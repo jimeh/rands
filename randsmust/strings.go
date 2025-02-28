@@ -180,10 +180,31 @@ func DNSLabel(n int) string {
 	return r
 }
 
-// UUID returns a random UUID v4 in string format as defined by RFC 4122,
+// UUIDv4 returns a random UUID v4 in string format as defined by RFC 4122,
 // section 4.4.
 func UUID() string {
 	r, err := rands.UUID()
+	if err != nil {
+		panic(err)
+	}
+
+	return r
+}
+
+// UUIDv7 returns a time-ordered UUID v7 in string format.
+//
+// The UUID v7 format uses a timestamp with millisecond precision in the most
+// significant bits, followed by random data. This provides both uniqueness and
+// chronological ordering, making it ideal for database primary keys and
+// situations where sorting by creation time is desired.
+//
+// References:
+// - https://uuid7.com/
+// - https://www.ietf.org/archive/id/draft-peabody-dispatch-new-uuid-format-04.html#name-uuid-version-7
+//
+//nolint:lll
+func UUIDv7() string {
+	r, err := rands.UUIDv7()
 	if err != nil {
 		panic(err)
 	}

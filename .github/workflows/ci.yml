@@ -102,6 +102,9 @@ jobs:
     name: Store benchmarks
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+    permissions:
+      deployments: write
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5
@@ -118,7 +121,7 @@ jobs:
         with:
           tool: "go"
           output-file-path: output.txt
-          github-token: ${{ secrets.GH_PUSH_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           comment-on-alert: true
           auto-push: true
 

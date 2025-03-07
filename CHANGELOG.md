@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.4.0](https://github.com/jimeh/rands/compare/v0.3.0...v0.4.0) (2025-03-07)
+
+
+### ⚠ BREAKING CHANGES
+
+* **deps:** Minimum Go version changed from 1.15 to 1.17.
+
+### Features
+
+* **deps:** upgrade to Go 1.17 and golanci-lint 1.64 ([#5](https://github.com/jimeh/rands/issues/5)) ([16bd3ea](https://github.com/jimeh/rands/commit/16bd3ea3b9483f5510c0e0fa35e832e881840b3a))
+* **strings/uuidv7:** add UUIDv7 generation ([#10](https://github.com/jimeh/rands/issues/10)) ([fe43086](https://github.com/jimeh/rands/commit/fe4308607cc8d454255908dc44e64462759e303d))
+
 ## [0.3.0](https://github.com/jimeh/rands/compare/v0.2.0...v0.3.0) (2021-12-17)
 
 

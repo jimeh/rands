@@ -132,7 +132,7 @@ jobs:
       release_created: ${{ steps.release-please.outputs.release_created }}
       version: ${{ steps.release-please.outputs.version }}
     steps:
-      - uses: jimeh/release-please-manifest-action@v1
+      - uses: jimeh/release-please-manifest-action@v2
         id: release-please
         with:
           app-id: ${{ secrets.RELEASE_BOT_APP_ID }}

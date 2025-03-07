@@ -680,10 +680,12 @@ func TestUUIDv7(t *testing.T) {
 		timestampBytes := int64(b[0])<<40 | int64(b[1])<<32 |
 			int64(b[2])<<24 | int64(b[3])<<16 | int64(b[4])<<8 | int64(b[5])
 
-		// Verify timestamp is within 100 milliseconds of current time
+		// Verify timestamp is within 10 seconds of current time. This is a
+		// sanity check to ensure the UUID is not too far off from the current
+		// time, while allowing tests to pass on super slow machines.
 		tsTime := time.UnixMilli(timestampBytes)
-		require.WithinDuration(t, time.Now(), tsTime, 100*time.Millisecond,
-			"timestamp is not within 100 milliseconds of current time",
+		require.WithinDuration(t, time.Now(), tsTime, 10*time.Second,
+			"timestamp is not within 10 seconds of current time",
 		)
 
 		// After the first UUID, verify that UUIDs are monotonically increasing

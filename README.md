@@ -5,8 +5,8 @@
 <p align="center">
   <strong>
     Go package providing a suite of functions that use <code>crypto/rand</code>
-    to generate cryptographically secure random strings in various formats, as
-    well as ints and bytes.
+    to generate cryptographically secure random data in various forms and
+    formats.
   </strong>
 </p>
 
@@ -59,6 +59,9 @@ n, err := rands.Int(2147483647)                   // => 1334400235
 n, err := rands.Int64(int64(9223372036854775807)) // => 8256935979116161233
 
 b, err := rands.Bytes(8) // => [0 220 137 243 135 204 34 63]
+
+err := rands.Shuffle(len(arr) func(i, j) { arr[i], arr[j] = arr[j], arr[i] })
+err := rands.ShuffleSlice(arr)
 ```
 
 ## [`randsmust`](https://pkg.go.dev/github.com/jimeh/rands/randsmust) package
@@ -102,6 +105,9 @@ n := randsmust.Int(2147483647)                   // => 1293388115
 n := randsmust.Int64(int64(9223372036854775807)) // => 6168113630900161239
 
 b := randsmust.Bytes(8) // => [205 128 54 95 0 95 53 51]
+
+randsmust.Shuffle(len(arr) func(i, j) { arr[i], arr[j] = arr[j], arr[i] })
+randsmust.ShuffleSlice(arr)
 ```
 
 ## Documentation

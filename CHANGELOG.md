@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.5.0](https://github.com/jimeh/rands/compare/v0.4.0...v0.5.0) (2025-03-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* **shuffle:** Minimum required Go version is now 1.18 due the `ShuffleSlice` using generics.
+
+### Features
+
+* **shuffle:** add Shuffle and ShuffleSlice functions ([#11](https://github.com/jimeh/rands/issues/11)) ([a141938](https://github.com/jimeh/rands/commit/a14193839475562268ea10e356580b33b27ebedc))
+
 ## [0.4.0](https://github.com/jimeh/rands/compare/v0.3.0...v0.4.0) (2025-03-07)
 
 

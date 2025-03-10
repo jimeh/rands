@@ -60,7 +60,7 @@ n, err := rands.Int64(int64(9223372036854775807)) // => 8256935979116161233
 
 b, err := rands.Bytes(8) // => [0 220 137 243 135 204 34 63]
 
-err := rands.Shuffle(len(arr) func(i, j) { arr[i], arr[j] = arr[j], arr[i] })
+err := rands.Shuffle(len(arr), func(i, j) { arr[i], arr[j] = arr[j], arr[i] })
 err := rands.ShuffleSlice(arr)
 ```
 
@@ -106,7 +106,7 @@ n := randsmust.Int64(int64(9223372036854775807)) // => 6168113630900161239
 
 b := randsmust.Bytes(8) // => [205 128 54 95 0 95 53 51]
 
-randsmust.Shuffle(len(arr) func(i, j) { arr[i], arr[j] = arr[j], arr[i] })
+randsmust.Shuffle(len(arr), func(i, j) { arr[i], arr[j] = arr[j], arr[i] })
 randsmust.ShuffleSlice(arr)
 ```
 
